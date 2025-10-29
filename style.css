@@ -148,5 +148,34 @@ footer {
     height: auto;
   }
 }
+#testimonials {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  text-align: center;
+}
+
+.testimonial {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #333;
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #0077cc;
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  #testimonials {
+    padding: 1rem;
+  }
+
+  .testimonial {
+    font-size: 0.95rem;
+  }
+}
 
 }
