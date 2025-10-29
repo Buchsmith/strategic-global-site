@@ -10,26 +10,63 @@
   <header>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <!-- Home Section -->
+    <section id="home" class="hero">
       <h2>STRATEGIC INTELLIGENCE CONSULTANCY</h2>
       <h1>Guiding You Through Complexity<br>Toward Wisdom & Impact</h1>
       <div class="buttons">
-        <a href="#" class="btn primary">OUR SERVICES</a>
-        <a href="#" class="btn secondary">CONTACT US</a>
+        <a href="#services" class="btn primary">OUR SERVICES</a>
+        <a href="#contact" class="btn secondary">CONTACT US</a>
       </div>
       <div class="compass">
         <img src="compass logo.png" alt="Compass Logo" />
       </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Strategic Intelligence Consultancy is a remote-first, globally positioned firm specializing in technical deployment, branding, and strategic insight. Founded with the belief that clarity drives impact, we help clients build credible, U.S.-aligned digital identities that resonate across borders.</p>
+      <p>Our team blends technical precision with strategic foresight — from DNS and SSL configuration to brand architecture and market positioning. Whether you're launching a startup or scaling a global brand, we guide you through complexity toward wisdom and impact.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li><strong>Web Deployment & Infrastructure:</strong> GitHub/Netlify setup, DNS configuration, SSL, and favicon integration.</li>
+        <li><strong>Strategic Branding:</strong> U.S.-credible positioning, domain strategy, and visual identity alignment.</li>
+        <li><strong>Technical Troubleshooting:</strong> Step-by-step support for propagation, CNAME records, and platform migration.</li>
+        <li><strong>Verification Support:</strong> Collaborative workflows for PayPal, Stripe, and other U.S.-based services.</li>
+        <li><strong>Consulting & Intelligence:</strong> Strategic insight for global client acquisition and digital credibility.</li>
+      </ul>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+      <h2>Insights & Intelligence</h2>
+      <p>Our blog is where strategy meets execution. Coming soon: deep dives into digital credibility, global branding, and technical deployment workflows. Stay tuned.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </section>
   </main>
 
@@ -38,3 +75,4 @@
   </footer>
 </body>
 </html>
+
