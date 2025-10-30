@@ -35,7 +35,184 @@
     gtag('config', 'G-XXXXXXXXXX');
   </script>
 
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #111;
+      color: #fff;
+      padding: 1rem 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #f4f4f4;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .primary {
+      background-color: #0077cc;
+      color: #fff;
+    }
+
+    .secondary {
+      background-color: #eee;
+      color: #333;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    button {
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: #0077cc;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .buttons a {
+        width: 80%;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      section {
+        padding: 1rem;
+      }
+
+      form {
+        padding: 0 1rem;
+      }
+
+      input, textarea {
+        font-size: 1rem;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #testimonials {
+        padding: 1rem;
+      }
+
+      .testimonial {
+        font-size: 0.95rem;
+      }
+    }
+
+    #testimonials {
+      background-color: #f9f9f9;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .testimonial {
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      color: #333;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #0077cc;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -51,7 +228,6 @@
   </header>
 
   <main>
-    <!-- Home Section -->
     <section id="home" class="hero">
       <h2>STRATEGIC INTELLIGENCE CONSULTANCY</h2>
       <h1>Guiding You Through Complexity<br>Toward Clarity, Influence & Impact</h1>
@@ -64,14 +240,12 @@
       </div>
     </section>
 
-    <!-- About Us Section -->
     <section id="about">
       <h2>About Us</h2>
       <p>Strategic Intelligence Consultancy is a remote-first, globally positioned firm delivering high-impact intelligence solutions to individuals, corporations, governments, and military organizations. We operate across diverse fields including market research, brand penetration, political strategy, public relations, and diplomacy.</p>
       <p>Our lean, diverse, and flexible team draws from a rich pool of talent across the private and public sectors. By leveraging cutting-edge technology, advanced research methodologies, and strategic foresight, we provide rapid, actionable solutions tailored to complex challenges. Whether you're navigating geopolitical landscapes or launching a market entry campaign, we guide you through complexity toward clarity, influence, and impact.</p>
     </section>
 
-    <!-- Services Section -->
     <section id="services">
       <h2>Our Services</h2>
       <ul>
@@ -84,41 +258,15 @@
       </ul>
     </section>
 
-    <!-- Blog Section -->
     <section id="blog">
       <h2>Insights & Intelligence</h2>
       <p>Our blog is where strategy meets execution. Coming soon: deep dives into digital credibility, geopolitical analysis, and rapid deployment workflows. Stay tuned.</p>
     </section>
 
-    <!-- Testimonials Section -->
-<section id="testimonials">
-  <h2>Client Testimonials</h2>
-  <div class="testimonial">
-    <p>"Strategic Intelligence Global helped us navigate a complex market entry with precision and speed. Their insights were game-changing." <br><strong>— CEO, Emerging Markets Tech</strong></p>
-  </div>
-  <div class="testimonial">
-    <p>"Their team delivered a diplomatic strategy that reshaped our international partnerships. Highly responsive and deeply informed." <br><strong>— Director of Policy, Government Affairs</strong></p>
-  </div>
-  <div class="testimonial">
-    <p>"From branding to compliance, they guided our startup through every step with clarity and confidence." <br><strong>— Founder, Fintech Launchpad</strong></p>
-  </div>
-</section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <form name="contact" method="POST" data-netlify="true">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Strategic Intelligence Global. Built for clarity, influence, and legacy empowerment.</p>
-  </footer>
-</body>
-</html>
-
+    <section id="testimonials">
+      <h2>Client Testimonials</h2>
+      <div class="testimonial">
+        <p>"Strategic Intelligence Global helped us navigate a complex market entry with precision and speed. Their insights were game-changing." <br><strong>— CEO, Emerging Markets Tech</strong></p>
+      </div>
+      <div class="testimonial">
+        <p>"Their team delivered a
