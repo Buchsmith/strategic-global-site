@@ -1,297 +1,99 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Strategic Intelligence Global</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strategic Intelligence Consultancy</title>
+    <meta name="description" content="Strategic intelligence, geopolitical risk, and decision support for organizations operating in complex environments." />
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Strategic Intelligence Consultancy offers rapid, tech-driven solutions for governments, corporations, and individuals in market research, diplomacy, branding, and more." />
-  <meta name="keywords" content="strategic intelligence, market research, political strategy, branding, diplomacy, global consultancy" />
-  <meta name="author" content="Strategic Intelligence Global" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Strategic Intelligence Global" />
-  <meta property="og:description" content="Guiding you through complexity toward clarity, influence, and impact." />
-  <meta property="og:image" content="og-image.jpg" />
-  <meta property="og:url" content="https://strategicintelligenceconsultancy.services" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Strategic Intelligence Global" />
-  <meta name="twitter:description" content="Guiding you through complexity toward clarity, influence, and impact." />
-  <meta name="twitter:image" content="og-image.jpg" />
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
-  <!-- Tidio Chatbot -->
-  <script src="//code.tidio.co/your-tidio-id.js" async></script>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #111;
-      color: #fff;
-      padding: 1rem 0;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 3rem 1rem;
-      background-color: #f4f4f4;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .btn {
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .primary {
-      background-color: #0077cc;
-      color: #fff;
-    }
-
-    .secondary {
-      background-color: #eee;
-      color: #333;
-    }
-
-    section {
-      padding: 2rem;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    input, textarea {
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      width: 100%;
-    }
-
-    textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
-    button {
-      padding: 0.75rem;
-      font-size: 1rem;
-      background-color: #0077cc;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #111;
-      color: #fff;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .hero h1 {
-        font-size: 1.5rem;
-        text-align: center;
-      }
-
-      .buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .buttons a {
-        width: 80%;
-        text-align: center;
-        margin-bottom: 10px;
-      }
-
-      section {
-        padding: 1rem;
-      }
-
-      form {
-        padding: 0 1rem;
-      }
-
-      input, textarea {
-        font-size: 1rem;
-      }
-
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      #testimonials {
-        padding: 1rem;
-      }
-
-      .testimonial {
-        font-size: 0.95rem;
-      }
-    }
-
-    #testimonials {
-      background-color: #f9f9f9;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .testimonial {
-      margin-bottom: 1.5rem;
-      font-style: italic;
-      color: #333;
-    }
-
-    .testimonial strong {
-      display: block;
-      margin-top: 0.5rem;
-      font-weight: bold;
-      color: #0077cc;
-    }
-  </style>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section id="home" class="hero">
-      <h2>STRATEGIC INTELLIGENCE CONSULTANCY</h2>
-      <h1>Guiding You Through Complexity<br>Toward Clarity, Influence & Impact</h1>
-      <div class="buttons">
-        <a href="#services" class="btn primary">OUR SERVICES</a>
-        <a href="#contact" class="btn secondary">CONTACT US</a>
-      </div>
-      <div class="compass">
-        <img src="compass logo.png" alt="Compass Logo" />
-      </div>
-    </section>
+<header>
+    <div class="container">
+        <div class="logo">Strategic Intelligence Consultancy</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
 
-    <section id="about">
-      <h2>About Us</h2>
-      <p>Strategic Intelligence Consultancy is a remote-first, globally positioned firm delivering high-impact intelligence solutions to individuals, corporations, governments, and military organizations. We operate across diverse fields including market research, brand penetration, political strategy, public relations, and diplomacy.</p>
-      <p>Our lean, diverse, and flexible team draws from a rich pool of talent across the private and public sectors. By leveraging cutting-edge technology, advanced research methodologies, and strategic foresight, we provide rapid, actionable solutions tailored to complex challenges.</p>
-    </section>
-
-    <section id="services">
-      <h2>Our Services</h2>
-      <ul>
-        <li><strong>Strategic Intelligence & Advisory:</strong> Tailored insights for political strategy, diplomatic engagement, and public affairs.</li>
-        <li><strong>Market Research & Brand Penetration:</strong> Data-driven analysis for competitive positioning and global expansion.</li>
-        <li><strong>Web Deployment & Infrastructure:</strong> To enhance market presence and in-house workflows seamlessly.</li>
-        <li><strong>Technical Troubleshooting:</strong> Step-by-step support for IT and AI integration within your organization.</li>
-        <li><strong>Verification & Compliance Support:</strong> Collaborative workflows for PayPal, Stripe, and U.S.-based service onboarding.</li>
-        <li><strong>Strategic Branding:</strong> Credible positioning, domain strategy, and visual identity alignment.</li>
-      </ul>
-    </section>
-
-    <section id="blog">
-      <h2>Insights & Intelligence</h2>
-      <p>Our blog is where strategy meets execution. Coming soon: deep dives into digital credibility, geopolitical analysis, and rapid deployment workflows. Stay tuned.</p>
-    </section>
-
-    <section id="testimonials">
-  <h2>Client Testimonials</h2>
-
-  <div class="testimonial">
-    <p>"Strategic Intelligence Global helped us navigate a complex market entry with precision and speed. Their insights were game-changing."<br><strong>— CEO, Emerging Markets Tech</strong></p>
-  </div>
-
-  <div class="testimonial">
-    <p>"Their team delivered a diplomatic strategy that reshaped our international partnerships. Highly responsive and deeply informed."<br><strong>— Director of Policy, Government Affairs</strong></p>
-  </div>
-
-  <div class="testimonial">
-    <p>"From branding to compliance, they guided our startup through every step with clarity and confidence."<br><strong>— Founder, Fintech Launchpad</strong></p>
-  </div>
+<section class="hero">
+    <div class="container">
+        <h1>Strategic Intelligence.<br>Decisive Advantage.</h1>
+        <p>
+            We support senior leaders and institutions with intelligence‑driven analysis,
+            strategic assessment, and decision support in complex environments.
+        </p>
+        <a href="#contact" class="btn">Request a Confidential Consultation</a>
+    </div>
 </section>
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2024 Strategic Intelligence Global. All rights reserved.</p>
-  </footer>
+<section id="about" class="section">
+    <div class="container narrow">
+        <h2>About</h2>
+        <p>
+            Strategic Intelligence Consultancy is a focused advisory firm providing structured
+            intelligence and strategic analysis to organizations operating in high‑risk,
+            competitive, or uncertain environments.
+        </p>
+        <p>
+            We maintain a deliberately limited client portfolio to ensure analytical depth,
+            discretion, and senior‑level engagement.
+        </p>
+    </div>
+</section>
+
+<section id="services" class="section dark">
+    <div class="container">
+        <h2>Capabilities</h2>
+
+        <div class="grid">
+            <div class="card">Strategic Intelligence & Decision Support</div>
+            <div class="card">Geopolitical & Country Risk Analysis</div>
+            <div class="card">Strategic Risk & Threat Assessment</div>
+            <div class="card">Competitive & Market Intelligence</div>
+            <div class="card">Strategic Foresight & Scenario Planning</div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container narrow">
+        <h2>Engagement Approach</h2>
+        <p>
+            Engagements are selective and begin with a confidential exploratory discussion.
+            All work is conducted with discretion and aligned to client objectives.
+        </p>
+    </div>
+</section>
+
+<section id="contact" class="section dark">
+    <div class="container narrow">
+        <h2>Contact</h2>
+        <p>
+            Inquiries aligned with our expertise are welcome. All communications are treated as confidential.
+        </p>
+
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="text" placeholder="Organization">
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Nature of Inquiry" rows="4"></textarea>
+            <button type="submit" class="btn">Initiate Contact</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Strategic Intelligence Consultancy</p>
+    </div>
+</footer>
+
+</body>
+</html>
