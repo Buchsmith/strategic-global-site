@@ -56,8 +56,13 @@ nav a:hover {
     color: #ffffff;
 }
 
+/* Hero */
+
 .hero {
     padding: 120px 0;
+    background:
+        url("grid.svg"),
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.04), transparent 40%);
 }
 
 .hero h1 {
@@ -70,6 +75,8 @@ nav a:hover {
     max-width: 600px;
     color: #9ca3af;
 }
+
+/* Buttons */
 
 .btn {
     display: inline-block;
@@ -88,6 +95,8 @@ nav a:hover {
     color: #0f1720;
 }
 
+/* Sections */
+
 .section {
     padding: 80px 0;
 }
@@ -101,6 +110,8 @@ nav a:hover {
     font-size: 1.8rem;
     margin-bottom: 30px;
 }
+
+/* Capabilities */
 
 .grid {
     display: grid;
@@ -118,7 +129,9 @@ nav a:hover {
 /* Testimonials */
 
 .testimonials {
-    background: linear-gradient(180deg, #0f1720 0%, #111827 100%);
+    background:
+        url("grid.svg"),
+        linear-gradient(180deg, #0f1720 0%, #111827 100%);
 }
 
 .section-eyebrow {
