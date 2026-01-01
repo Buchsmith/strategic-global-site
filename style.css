@@ -130,3 +130,13 @@ footer {
     font-size: 0.8rem;
     color: #6b7280;
 }
+.principles {
+    list-style: none;
+}
+
+.principles li {
+    padding: 10px 0;
+    border-bottom: 1px solid #1f2933;
+    font-size: 0.95rem;
+}
+Insights
