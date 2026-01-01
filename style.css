@@ -26,6 +26,12 @@ header {
     border-bottom: 1px solid #1f2933;
 }
 
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -37,13 +43,6 @@ header {
 .logo img {
     width: 36px;
     height: 36px;
-
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 nav a {
@@ -80,6 +79,8 @@ nav a:hover {
     color: #ffffff;
     text-decoration: none;
     font-size: 0.9rem;
+    background: transparent;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -114,6 +115,95 @@ nav a:hover {
     background: #0f1720;
 }
 
+/* Testimonials */
+
+.testimonials {
+    background: linear-gradient(180deg, #0f1720 0%, #111827 100%);
+}
+
+.section-eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 15px;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.testimonial-feature {
+    position: relative;
+    padding: 50px;
+    margin-bottom: 60px;
+    border-left: 3px solid #9ca3af;
+    background: rgba(255, 255, 255, 0.02);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.testimonial-feature::before {
+    content: "“";
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 6rem;
+    color: rgba(255, 255, 255, 0.05);
+}
+
+.testimonial-feature:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.testimonial-feature blockquote {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #f3f4f6;
+}
+
+.testimonial-feature cite {
+    font-style: normal;
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.testimonial {
+    margin-bottom: 40px;
+    padding-left: 20px;
+    border-left: 2px solid #1f2933;
+}
+
+.testimonial p {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #d1d5db;
+}
+
+.testimonial span {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+/* Principles */
+
+.principles {
+    list-style: none;
+}
+
+.principles li {
+    padding: 10px 0;
+    border-bottom: 1px solid #1f2933;
+    font-size: 0.95rem;
+}
+
+/* Forms */
+
 form input,
 form textarea {
     width: 100%;
@@ -124,19 +214,11 @@ form textarea {
     color: #ffffff;
 }
 
+/* Footer */
+
 footer {
     padding: 40px 0;
     text-align: center;
     font-size: 0.8rem;
     color: #6b7280;
 }
-.principles {
-    list-style: none;
-}
-
-.principles li {
-    padding: 10px 0;
-    border-bottom: 1px solid #1f2933;
-    font-size: 0.95rem;
-}
-Insights
