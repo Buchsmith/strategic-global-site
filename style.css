@@ -1,255 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  color: #111;
+  line-height: 1.6;
+}
 
-  <title>Strategic Intelligence Consultancy | Gateway to Kenya & Africa</title>
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
 
-  <meta name="description" content="Kenya-based, U.S.-registered (Wyoming) consultancy providing market entry intelligence, risk analysis, and actionable insights for firms expanding into Africa.">
+header {
+  background: #0b1c2d;
+  color: white;
+  padding: 70px 0;
+}
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  color: white;
+}
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
-</head>
+.hero-text {
+  max-width: 700px;
+  color: #e5e7eb;
+}
 
-<body>
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-<!-- ================= HEADER / HERO ================= -->
-<header class="hero-header">
-  <div class="container">
-    <nav>
-      <div class="logo">Strategic Intelligence Consultancy</div>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#sectors">Sectors</a></li>
-        <li><a href="#testimonials">Clients</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
 
-    <div class="hero">
-      <h1 class="hero-title">Your Gateway to Kenya & Africa</h1>
-      <p class="hero-subtext">
-        Information leverage, risk analysis, and actionable intelligence
-        for American and global firms navigating African markets.
-      </p>
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+}
 
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Request a Market Brief</a>
-        <a href="#services" class="btn-secondary">Explore Services</a>
-      </div>
+.btn-primary {
+  display: inline-block;
+  margin-right: 10px;
+  background: #c9a24d;
+  color: #111;
+  padding: 12px 22px;
+  font-weight: 600;
+}
 
-      <div class="trust-seals">
-        <span>✔ Kenya‑Based Intelligence Operations</span>
-        <span>✔ U.S. Registered LLC (Wyoming)</span>
-        <span>✔ Confidential Advisory Practice</span>
-      </div>
-    </div>
-  </div>
-</header>
+.btn-secondary {
+  border: 1px solid #c9a24d;
+  color: #c9a24d;
+  padding: 12px 22px;
+}
 
-<!-- ================= ABOUT ================= -->
-<section id="about">
-  <div class="container">
-    <div class="section-title">
-      <h2>Core Identity</h2>
-      <p>Built to help firms enter, understand, and thrive in African markets.</p>
-    </div>
+.trust-line {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #d1d5db;
+}
 
-    <div class="grid">
-      <div class="card">
-        <h3>Who We Are</h3>
-        <p>
-          We are a Kenya‑based consultancy operating through a U.S.‑registered
-          LLC (Wyoming), specializing in supporting American and global firms
-          expanding into African markets.
-        </p>
-      </div>
+section {
+  padding: 70px 0;
+}
 
-      <div class="card">
-        <h3>What We Provide</h3>
-        <p>
-          Information leverage, risk analysis, and actionable intelligence—
-          designed to reduce uncertainty and accelerate informed decisions.
-        </p>
-      </div>
+section.light {
+  background: #f6f8fa;
+}
 
-      <div class="card">
-        <h3>Our Positioning</h3>
-        <p>
-          Affordable, fast, and discreet intelligence services—positioning us
-          as the gateway to Kenya and Africa.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+h2 {
+  font-family: "Playfair Display", serif;
+}
 
-<!-- ================= SECTOR VISUAL BAND ================= -->
-<section id="sectors" class="sector-band">
-  <div class="sector-grid">
+.sector-list li {
+  margin-bottom: 8px;
+}
 
-    <div class="sector-item">
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Fintech and digital payments">
-      <span>Fintech & Digital Payments</span>
-    </div>
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+}
 
-    <div class="sector-item">
-      <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854" alt="Agriculture and agribusiness">
-      <span>Agriculture & Agribusiness</span>
-    </div>
+button {
+  background: #1f7a63;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+}
 
-    <div class="sector-item">
-      <img src="https://images.unsplash.com/photo-1516900557549-41557d405adf" alt="Mining and natural resources">
-      <span>Mining & Natural Resources</span>
-    </div>
-
-    <div class="sector-item">
-      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Technology and data infrastructure">
-      <span>Technology & Data Infrastructure</span>
-    </div>
-
-    <div class="sector-item">
-      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" alt="Logistics and supply chains">
-      <span>Defense, Logistics & Supply Chains</span>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= SERVICES ================= -->
-<section id="services">
-  <div class="container">
-    <div class="section-title">
-      <h2>Intelligence & Advisory Services</h2>
-      <p>Modular intelligence products designed for speed, clarity, and leverage.</p>
-    </div>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>Market Entry Briefs (Quick Wins)</h3>
-        <p>
-          5–10 page insight packs covering fintech, agritech, renewable energy,
-          logistics, and e‑commerce.
-        </p>
-        <p><strong>Price:</strong> $200–$500</p>
-        <p>
-          Ideal for SMEs, startups, and consultancies seeking rapid leverage
-          without large consulting engagements.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Risk & Compliance Advisory</h3>
-        <p>
-          Regulatory snapshots covering tax, licensing, data protection,
-          and labor laws in Kenya and East Africa.
-        </p>
-        <p>
-          Subscription‑based monthly or quarterly updates combining public
-          regulation with local interpretation.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Partnership Mapping</h3>
-        <p>
-          Identification of local distributors, NGOs, or government contacts.
-        </p>
-        <p>
-          Example: European solar firm → vetted Kenyan distributors for a fee.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Cultural & Consumer Intelligence</h3>
-        <p>
-          Insights on mobile money adoption, social media trends, and
-          rural vs. urban purchasing behavior.
-        </p>
-        <p>Packaged as executive summaries for strategy teams.</p>
-      </div>
-
-      <div class="card">
-        <h3>Digital Platform Onboarding</h3>
-        <p>
-          Step‑by‑step guides for payments, hiring, and operations using
-          M‑Pesa, Airtel Money, Paystack, and related platforms.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ================= TESTIMONIALS ================= -->
-<section id="testimonials">
-  <div class="container">
-    <div class="section-title">
-      <h2>Client Feedback</h2>
-      <p>Representative perspectives from firms we have supported.</p>
-    </div>
-
-    <div class="grid">
-      <div class="testimonial">
-        <p>
-          “The intelligence provided allowed us to assess Kenya quickly
-          and move forward with confidence.”
-        </p>
-        <span>— Director, European Fintech Firm</span>
-      </div>
-
-      <div class="testimonial">
-        <p>
-          “Clear regulatory insight without unnecessary complexity.”
-        </p>
-        <span>— Strategy Lead, Infrastructure Company</span>
-      </div>
-
-      <div class="testimonial">
-        <p>
-          “Fast, grounded, and highly practical market intelligence.”
-        </p>
-        <span>— Partner, Advisory Firm</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section id="contact">
-  <div class="container">
-    <div class="section-title">
-      <h2>Confidential Consultation</h2>
-      <p>All inquiries are handled discreetly.</p>
-    </div>
-
-    <div class="lead-box">
-      <form>
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea rows="4" placeholder="Your Expansion Objectives"></textarea>
-        <button type="submit">Request Consultation</button>
-      </form>
-
-      <p class="contact-email">
-        Or email: <strong>research@strategicintelligenceconsultancy.services</strong>
-      </p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>
-    © Strategic Intelligence Consultancy — U.S. Registered LLC (Wyoming)<br>
-    Kenya‑Based Intelligence Operations | Confidential Advisory Practice
-  </p>
-</footer>
-
-</body>
-</html>
+footer {
+  background: #0b1c2d;
+  color: #d1d5db;
+  text-align: center;
+  padding: 40px 0;
+}
