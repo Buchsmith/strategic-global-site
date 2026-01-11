@@ -16,17 +16,17 @@
 <header>
   <div class="container">
     <nav>
-      <strong>Strategic Intelligence Consultancy</strong>
+      <strong class="logo">Strategic Intelligence Consultancy</strong>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#sectors">Sectors</a></li>
-        <li><a href="#clients">Clients</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
     <h1>Your Gateway to Kenya & Africa</h1>
+
     <p class="hero-text">
       Information leverage, risk analysis, and actionable intelligence for
       American and global firms navigating African markets.
@@ -36,10 +36,23 @@
     <a class="btn-secondary" href="#services">Explore Services</a>
 
     <p class="trust-line">
-      ✓ Kenya‑Based Intelligence Operations &nbsp; ✓ U.S. Registered LLC (Wyoming) &nbsp; ✓ Confidential Advisory Practice
+      ✓ Kenya‑Based Intelligence Operations &nbsp;
+      ✓ U.S. Registered LLC (Wyoming) &nbsp;
+      ✓ Confidential Advisory Practice
     </p>
   </div>
 </header>
+
+<!-- ===== CONTEXT VISUAL ===== -->
+<section class="visual-block">
+  <svg viewBox="0 0 800 200" preserveAspectRatio="xMidYMid meet">
+    <rect width="800" height="200" fill="#0b1c2d"/>
+    <path d="M50 150 L200 80 L350 120 L500 60 L650 100" stroke="#c9a24d" stroke-width="3" fill="none"/>
+    <text x="50%" y="55%" fill="#ffffff" text-anchor="middle" font-size="20">
+      African Markets • Infrastructure • Capital Flow
+    </text>
+  </svg>
+</section>
 
 <section id="about">
   <div class="container">
@@ -49,24 +62,61 @@
       specializing in helping American and global firms enter, understand,
       and thrive in African markets.
     </p>
-
     <p>
       We provide information leverage, risk analysis, and actionable intelligence
-      at affordable fees, positioning ourselves as the gateway to Kenya and Africa.
+      at affordable fees—positioning ourselves as the gateway to Kenya and Africa.
     </p>
   </div>
 </section>
 
+<!-- ===== SECTORS ===== -->
 <section id="sectors" class="light">
   <div class="container">
-    <h2>Key Sectors</h2>
-    <ul class="sector-list">
-      <li>Fintech & Digital Payments</li>
-      <li>Agriculture & Agribusiness</li>
-      <li>Mining & Natural Resources</li>
-      <li>Technology & Data Infrastructure</li>
-      <li>Logistics, Defense & Supply Chains</li>
-    </ul>
+    <h2>Key Sectors We Support</h2>
+
+    <div class="icon-grid">
+
+      <div class="icon-card">
+        <svg viewBox="0 0 64 64">
+          <rect width="64" height="64" rx="8" fill="#0b1c2d"/>
+          <path d="M16 32h32" stroke="#c9a24d" stroke-width="4"/>
+        </svg>
+        <p>Fintech & Digital Payments</p>
+      </div>
+
+      <div class="icon-card">
+        <svg viewBox="0 0 64 64">
+          <rect width="64" height="64" rx="8" fill="#0b1c2d"/>
+          <path d="M32 12v40" stroke="#c9a24d" stroke-width="4"/>
+        </svg>
+        <p>Agriculture & Agribusiness</p>
+      </div>
+
+      <div class="icon-card">
+        <svg viewBox="0 0 64 64">
+          <rect width="64" height="64" rx="8" fill="#0b1c2d"/>
+          <circle cx="32" cy="32" r="14" stroke="#c9a24d" stroke-width="4" fill="none"/>
+        </svg>
+        <p>Mining & Natural Resources</p>
+      </div>
+
+      <div class="icon-card">
+        <svg viewBox="0 0 64 64">
+          <rect width="64" height="64" rx="8" fill="#0b1c2d"/>
+          <rect x="18" y="18" width="28" height="28" stroke="#c9a24d" stroke-width="4" fill="none"/>
+        </svg>
+        <p>Technology & Data Infrastructure</p>
+      </div>
+
+      <div class="icon-card">
+        <svg viewBox="0 0 64 64">
+          <rect width="64" height="64" rx="8" fill="#0b1c2d"/>
+          <path d="M16 40h32M20 24h24" stroke="#c9a24d" stroke-width="4"/>
+        </svg>
+        <p>Logistics & Supply Chains</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -78,30 +128,20 @@
     <p>5–10 page insight packs | $200–$500</p>
 
     <h3>Risk & Compliance Advisory</h3>
-    <p>Regulatory snapshots via monthly or quarterly subscriptions</p>
+    <p>Regulatory snapshots delivered monthly or quarterly</p>
 
     <h3>Partnership Mapping</h3>
     <p>Vetted distributors, NGOs, and government contacts</p>
 
     <h3>Cultural & Consumer Intelligence</h3>
-    <p>Executive summaries for marketing and strategy teams</p>
+    <p>Executive summaries on consumer behavior and adoption trends</p>
 
     <h3>Digital Platform Onboarding</h3>
-    <p>Guides for payments, hiring, and operations (M‑Pesa, Paystack, etc.)</p>
+    <p>Guides for payments, hiring, and operations across Africa</p>
   </div>
 </section>
 
-<section id="clients" class="light">
-  <div class="container">
-    <h2>Client Feedback</h2>
-    <blockquote>
-      “Clear, practical intelligence that helped us move forward quickly.”
-      <br>— European Fintech Executive
-    </blockquote>
-  </div>
-</section>
-
-<section id="contact">
+<section id="contact" class="light">
   <div class="container">
     <h2>Confidential Consultation</h2>
     <form>
@@ -110,7 +150,6 @@
       <textarea placeholder="Your expansion objectives"></textarea>
       <button type="submit">Request Consultation</button>
     </form>
-
     <p>Email: <strong>research@strategicintelligenceconsultancy.services</strong></p>
   </div>
 </section>
