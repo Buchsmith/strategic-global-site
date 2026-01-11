@@ -29,13 +29,11 @@ header {
 header h1 {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
-  margin-top: 30px;
 }
 
 .hero-text {
   max-width: 720px;
   color: #e5e7eb;
-  font-size: 1.05rem;
 }
 
 nav {
@@ -44,18 +42,50 @@ nav {
   align-items: center;
 }
 
-nav ul {
+/* ===== NAVIGATION ===== */
+.nav-menu {
   list-style: none;
   display: flex;
   gap: 24px;
 }
 
-nav a {
+.nav-menu a {
   color: #e5e7eb;
   text-decoration: none;
   font-family: "Space Grotesk", sans-serif;
+  font-size: 0.9rem;
 }
 
+/* ===== DROPDOWN ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #0b1c2d;
+  padding: 12px 0;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  padding: 6px 18px;
+}
+
+.dropdown-menu a {
+  color: #e5e7eb;
+  font-size: 0.85rem;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ===== BUTTONS ===== */
 .btn-primary {
   background: #c9a24d;
   color: #111;
@@ -75,6 +105,7 @@ nav a {
   color: #d1d5db;
 }
 
+/* ===== SECTIONS ===== */
 section {
   padding: 90px 0;
 }
@@ -85,46 +116,6 @@ section.light {
 
 h2 {
   font-family: "Playfair Display", serif;
-  font-size: 2.2rem;
-}
-
-.section-intro {
-  max-width: 700px;
-  color: #374151;
-  margin-bottom: 50px;
-}
-
-.sector-grid,
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 36px;
-}
-
-.sector-card,
-.service-card {
-  background: white;
-  padding: 36px;
-  border-left: 4px solid #c9a24d;
-}
-
-.sector-card h3,
-.service-card h3 {
-  font-family: "Space Grotesk", sans-serif;
-}
-
-.sector-card svg {
-  width: 48px;
-  height: 48px;
-  fill: #0b1c2d;
-  stroke: #c9a24d;
-  stroke-width: 3;
-  margin-bottom: 14px;
-}
-
-.price {
-  font-weight: 600;
-  color: #0b1c2d;
 }
 
 input, textarea {
