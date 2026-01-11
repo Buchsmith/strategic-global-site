@@ -138,3 +138,115 @@ footer {
   text-align: center;
   padding: 50px 0;
 }
+/* =====================================================
+   MOBILE RESPONSIVENESS (SMARTPHONES & SMALL TABLETS)
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  /* --- GENERAL LAYOUT --- */
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  header {
+    padding: 50px 0;
+  }
+
+  /* --- TYPOGRAPHY --- */
+  header h1 {
+    font-size: 2.1rem;
+    line-height: 1.25;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text {
+    font-size: 0.95rem;
+  }
+
+  /* --- NAVIGATION (STACKED, TAP-FRIENDLY) --- */
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .nav-menu li {
+    font-size: 0.85rem;
+  }
+
+  /* Disable hover dropdown on mobile (no hover) */
+  .dropdown-menu {
+    position: static;
+    display: block;
+    background: transparent;
+    padding: 0;
+  }
+
+  .dropdown-menu li {
+    padding: 4px 0;
+  }
+
+  /* --- BUTTONS --- */
+  .btn-primary,
+  .btn-secondary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  /* --- SECTIONS --- */
+  section {
+    padding: 60px 0;
+  }
+
+  section.light {
+    padding: 60px 0;
+  }
+
+  /* --- GRIDS STACK --- */
+  .sector-grid,
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* --- SERVICE & SECTOR CARDS --- */
+  .sector-card,
+  .service-card {
+    padding: 26px;
+  }
+
+  /* --- FORMS (THUMB FRIENDLY) --- */
+  input,
+  textarea {
+    font-size: 16px; /* prevents iOS zoom */
+    padding: 14px;
+  }
+
+  button {
+    width: 100%;
+    padding: 16px;
+    font-size: 1rem;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    padding: 36px 0;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
