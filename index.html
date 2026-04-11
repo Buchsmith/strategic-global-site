@@ -3,36 +3,629 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Intelligence | Global Operations</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <title>GroundTruth | Field Verification Intelligence - Africa</title>
+    <meta name="description" content="On-demand field verification across Africa. Verified agents, geotagged evidence, 24-48 hour turnaround.">
+    <style>
+        /* Psychological Trust Color Palette */
+        :root {
+            --trust-navy: #0f172a;      /* Deep navy - stability, trust, authority */
+            --trust-teal: #0d9488;      /* Teal - reliability, clarity, calm */
+            --trust-gold: #f59e0b;      /* Amber gold - premium quality, attention */
+            --trust-slate: #334155;     /* Slate - professional, grounded */
+            --trust-light: #f8fafc;     /* Off-white - clean, honest */
+            --trust-accent: #06b6d4;    /* Cyan - technology, precision */
+        }
+
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
+
+        body{
+            background: linear-gradient(135deg, var(--trust-navy) 0%, #1e293b 100%);
+            color: var(--trust-light);
+            line-height:1.6;
+            min-height: 100vh;
+        }
+
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+        /* Header with glassmorphism - conveys transparency */
+        header{
+            padding:20px 0;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(13, 148, 136, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--trust-teal), var(--trust-accent));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--trust-light), var(--trust-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-sub {
+            font-size: 11px;
+            color: var(--trust-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: -5px;
+        }
+
+        /* Hero with trust signals */
+        .hero{
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid var(--trust-gold);
+            color: var(--trust-gold);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1{
+            font-size: 56px;
+            margin-bottom: 24px;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .hero h1 span{
+            color: var(--trust-teal);
+            font-weight: 700;
+            position: relative;
+        }
+
+        .hero h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--trust-teal), var(--trust-accent));
+            border-radius: 2px;
+        }
+
+        .hero p{
+            font-size: 20px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta{
+            display:inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--trust-teal), var(--trust-accent));
+            color: white;
+            padding: 16px 32px;
+            text-decoration:none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(13, 148, 136, 0.4);
+        }
+
+        .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(13, 148, 136, 0.6);
+        }
+
+        .cta.secondary{
+            background: transparent;
+            border: 2px solid var(--trust-slate);
+            color: var(--trust-light);
+            box-shadow: none;
+        }
+
+        .cta.secondary:hover {
+            border-color: var(--trust-teal);
+            background: rgba(13, 148, 136, 0.1);
+        }
+
+        /* Trust indicators bar */
+        .trust-bar {
+            background: rgba(51, 65, 85, 0.3);
+            padding: 20px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(13, 148, 136, 0.2);
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .trust-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--trust-teal);
+        }
+
+        /* Services section with cards */
+        .services{
+            padding: 100px 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.5) 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: #64748b;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+            gap: 30px;
+        }
+
+        .card{
+            background: linear-gradient(135deg, rgba(51, 65, 85, 0.4), rgba(15, 23, 42, 0.6));
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(13, 148, 136, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--trust-teal), var(--trust-accent));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(13, 148, 136, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(13, 148, 136, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(13, 148, 136, 0.3);
+        }
+
+        .card h3{
+            color: var(--trust-light);
+            margin-bottom: 12px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .card p{
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .features-list li {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            color: var(--trust-teal);
+            font-weight: bold;
+        }
+
+        .price{
+            color: var(--trust-gold);
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .price span {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        /* Process section - builds confidence */
+        .process {
+            padding: 100px 0;
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 30px;
+            color: var(--trust-teal);
+            font-size: 24px;
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--trust-teal), var(--trust-accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 20px rgba(13, 148, 136, 0.4);
+        }
+
+        .process-step h4 {
+            color: var(--trust-light);
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .process-step p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* Contact section */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(13, 148, 136, 0.1), transparent);
+        }
+
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .contact-options {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 30px;
+            background: rgba(51, 65, 85, 0.3);
+            border-radius: 12px;
+            border: 1px solid rgba(13, 148, 136, 0.2);
+            text-decoration: none;
+            color: var(--trust-light);
+            transition: all 0.3s ease;
+        }
+
+        .contact-option:hover {
+            border-color: var(--trust-teal);
+            background: rgba(13, 148, 136, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 24px;
+        }
+
+        .contact-details {
+            text-align: left;
+        }
+
+        .contact-label {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-value {
+            font-weight: 600;
+            color: var(--trust-teal);
+        }
+
+        footer{
+            padding: 40px 0;
+            border-top: 1px solid rgba(13, 148, 136, 0.2);
+            text-align: center;
+            color: #475569;
+            font-size: 14px;
+        }
+
+        @media(max-width:768px){
+            .hero h1{font-size: 36px}
+            .process-grid {grid-template-columns: 1fr;}
+            .process-step::after {display: none;}
+            .grid {grid-template-columns: 1fr;}
+        }
+    </style>
+<base target="_blank">
 </head>
-<body style="background:#0a0a0f; color:white; font-family:Arial,sans-serif; margin:0; padding:0;">
-    <div style="text-align:center; padding:80px 20px 40px;">
-        <div style="display:inline-block; background:rgba(0,212,255,0.1); border:1px solid #00d4ff; color:#00d4ff; padding:5px 15px; border-radius:4px; font-size:0.75rem; letter-spacing:2px; margin-bottom:20px;">NAIROBI OPERATIONS CENTER</div>
-        <h1 style="font-size:2.8rem; margin:10px 0; font-weight:700;">Strategic Intelligence Consultancy</h1>
-        <p style="color:#a0a0b0; font-size:1.1rem; max-width:600px; margin:0 auto 50px;">Wyoming-registered. Kenya-based. Serving global clients with geographic market entry and competitive commercial signals.</p>
-        <h2 style="color:#a0a0b0; font-size:1.2rem; margin-bottom:30px; font-weight:400;">Select Your Theater of Operations</h2>
-        <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap; max-width:1000px; margin:0 auto;">
-            <a href="divisions/geographic/" style="text-decoration:none; color:white; background:#1a1a24; padding:40px; border-radius:12px; border:2px solid #ffd700; width:320px; display:block; transition:all 0.3s;">
-                <div style="font-size:3.5rem; margin-bottom:15px;">🌍</div>
-                <h2 style="margin:10px 0; font-size:1.5rem;">Geographic Intelligence</h2>
-                <p style="color:#a0a0b0; margin:10px 0 20px; font-size:0.95rem;">African market entry, regulatory risk, and partnership intelligence.</p>
-                <span style="color:#ffd700; font-size:0.75rem; letter-spacing:1px; background:rgba(255,215,0,0.1); padding:5px 15px; border-radius:20px;">ESTABLISHED PRACTICE</span>
-            </a>
-            <a href="products/shelf-gap-bot/" style="text-decoration:none; color:white; background:#1a1a24; padding:40px; border-radius:12px; border:2px solid #00d4ff; width:320px; display:block; box-shadow:0 0 20px rgba(0,212,255,0.1);">
-                <div style="font-size:3.5rem; margin-bottom:15px;">📡</div>
-                <h2 style="margin:10px 0; font-size:1.5rem;">Commercial Signals</h2>
-                <p style="color:#a0a0b0; margin:10px 0 20px; font-size:0.95rem;">Real-time competitor monitoring and inventory arbitrage detection.</p>
-                <span style="color:#00d4ff; font-size:0.75rem; letter-spacing:1px; background:rgba(0,212,255,0.1); padding:5px 15px; border-radius:20px;">NEW: SHELF GAP BOT™</span>
-            </a>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo-icon">GT</div>
+                <div>
+                    <div class="logo-text">GROUNDTRUTH</div>
+                    <div class="logo-sub">Field Verification Intelligence</div>
+                </div>
+            </div>
         </div>
-        <div style="margin-top:60px; padding:25px; background:rgba(0,212,255,0.05); border:1px solid #2a2a3a; border-radius:8px; max-width:700px; margin-left:auto; margin-right:auto;">
-            <p style="color:#a0a0b0; margin:0; font-size:0.95rem;"><strong style="color:#00d4ff;">Dual-Track Advantage:</strong> Entering African markets? Monitor competitor inventory while you establish local presence. <a href="contact/" style="color:#00d4ff;">Bundle for 20% off →</a></p>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="trust-badge">
+                <span>🔒</span> Nairobi Operations Center
+            </div>
+            <h1>Verify Before You <span>Trust</span></h1>
+            <p>On-demand field verification across Africa. Verified agents, geotagged evidence, 24-48 hour turnaround. From factory floors to remote offices, we deliver ground truth.</p>
+            <div class="cta-container">
+                <a href="https://wa.me/254792635971?text=I%20need%20verification%20services" class="cta">
+                    <span>💬</span> Start on WhatsApp
+                </a>
+                <a href="#services" class="cta secondary">View Services</a>
+            </div>
         </div>
-    </div>
-    <footer style="background:#12121a; border-top:1px solid #2a2a3a; padding:30px; text-align:center; margin-top:50px; color:#606070; font-size:0.85rem;">
-        <p>© 2026 Strategic Intelligence Consultancy | Nairobi Operations Center | Wyoming LLC</p>
-        <p style="margin-top:10px;"><a href="mailto:africa@strategicintelligenceconsultancy.services" style="color:#606070; text-decoration:none; margin:0 10px;">Africa Inquiries</a> | <a href="mailto:signals@strategicintelligenceconsultancy.services" style="color:#606070; text-decoration:none; margin:0 10px;">Signals Division</a></p>
+
+        <div class="trust-bar">
+            <div class="container">
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span>✓</span> Geotagged Video Evidence
+                    </div>
+                    <div class="trust-item">
+                        <span>✓</span> 24-48 Hour Turnaround
+                    </div>
+                    <div class="trust-item">
+                        <span>✓</span> Vetted Local Agents
+                    </div>
+                    <div class="trust-item">
+                        <span>✓</span> Money-Back Guarantee
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Verification Services</h2>
+                <p>Choose the level of intelligence you need. From rapid spot-checks to ongoing strategic partnerships.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Rapid Verification</h3>
+                    <p>Single-task verification for immediate peace of mind. Perfect for one-off checks before committing funds.</p>
+                    <ul class="features-list">
+                        <li>Existence & location verification</li>
+                        <li>Identity & document authentication</li>
+                        <li>Asset condition reports</li>
+                        <li>Same-day delivery available</li>
+                    </ul>
+                    <div class="price">$50 - $200 <span>per task</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Ongoing Monitoring</h3>
+                    <p>Continuous oversight for portfolios, suppliers, or remote teams. Monthly intelligence that keeps you informed.</p>
+                    <ul class="features-list">
+                        <li>Supplier audits & compliance</li>
+                        <li>Portfolio company monitoring</li>
+                        <li>Remote team verification</li>
+                        <li>ESG & regulatory checks</li>
+                    </ul>
+                    <div class="price">$500 - $2,000 <span>per month</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Strategic Intelligence</h3>
+                    <p>Deep-due diligence for critical decisions. Custom investigations and crisis response when stakes are high.</p>
+                    <ul class="features-list">
+                        <li>Market entry due diligence</li>
+                        <li>Crisis response & investigation</li>
+                        <li>Competitive intelligence</li>
+                        <li>Legal evidence collection</li>
+                    </ul>
+                    <div class="price">$5,000+ <span>per project</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Four steps from uncertainty to verified truth</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Request</h4>
+                    <p>WhatsApp us what you need verified, with location and deadline</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Quote</h4>
+                    <p>We confirm feasibility and pricing within 2 hours</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Deploy</h4>
+                    <p>Verified agent executes within 24-48 hours</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Deliver</h4>
+                    <p>Receive geotagged video report and documentation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Start With Confidence</h2>
+            <p>Reach out now. First consultation is free.</p>
+            <div class="contact-options">
+                <a href="https://wa.me/254792635971" class="contact-option">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-details">
+                        <div class="contact-label">WhatsApp Business</div>
+                        <div class="contact-value">+254 792 635 971</div>
+                    </div>
+                </a>
+                <a href="mailto:strategicintelconsultancy@gmail.com" class="contact-option">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">strategicintelconsultancy@gmail.com</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 GroundTruth by Strategic Intelligence Consultancy. Nairobi Operations Center.</p>
+            <p style="margin-top: 10px; color: #64748b;">Field verification across Africa | Geotagged evidence | Trusted intelligence</p>
+        </div>
     </footer>
 </body>
 </html>
