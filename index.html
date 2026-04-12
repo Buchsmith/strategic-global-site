@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Intelligence | Global Operations</title>
-
-    <!-- Email Campaign Tracking -->
+    <title>Strategic Intelligence Consultancy | How We Work</title>
+    <meta name="description" content="Professional intelligence services for Africa. Four steps from your problem to verified solution.">
+    
+    <!-- Tracking -->
     <script>
         const params = new URLSearchParams(window.location.search);
         const source = params.get('utm_source');
@@ -13,39 +14,645 @@
             fetch('https://formspree.io/f/xjgjbjgo', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({message: 'Hot lead from email!', page: window.location.href, time: new Date().toString()})
-            }).catch(e => console.log('Tracking active'));
+                body: JSON.stringify({
+                    message: 'Lead from email campaign',
+                    page: window.location.href,
+                    time: new Date().toString()
+                })
+            }).catch(() => {});
         }
     </script>
-    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        :root {
+            /* Professional intelligence palette */
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --slate: #334155;
+            --slate-light: #475569;
+            --silver: #94a3b8;
+            --silver-light: #cbd5e1;
+            --fog: #f1f5f9;
+            --white: #ffffff;
+            
+            /* Accents - restrained */
+            --gold: #c9a227;
+            --gold-light: rgba(201, 162, 39, 0.1);
+            --steel: #64748b;
+            --steel-light: rgba(100, 116, 139, 0.1);
+            
+            --text: #1e293b;
+            --text-light: #64748b;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: var(--white);
+            color: var(--text);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        
+        /* Header */
+        header {
+            padding: 56px 0 48px;
+            background: var(--navy);
+            color: var(--white);
+            margin: 0 -32px;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+        
+        .org-name {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--silver);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .org-name::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+        
+        h1 {
+            font-size: 40px;
+            font-weight: 400;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero-sub {
+            font-size: 18px;
+            color: var(--silver);
+            line-height: 1.6;
+            max-width: 640px;
+        }
+        
+        /* Problem section */
+        .problem {
+            padding: 48px 0 40px;
+            background: var(--fog);
+            margin: 0 -32px;
+            padding-left: 32px;
+            padding-right: 32px;
+            border-bottom: 1px solid var(--silver-light);
+        }
+        
+        .problem h2 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--slate);
+            margin-bottom: 20px;
+        }
+        
+        .problem-statement {
+            font-size: 24px;
+            color: var(--navy);
+            line-height: 1.5;
+            font-style: italic;
+            padding-left: 24px;
+            border-left: 4px solid var(--gold);
+        }
+        
+        /* How We Work */
+        .how-we-work {
+            padding: 64px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        
+        .section-title h2 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--slate);
+            margin-bottom: 16px;
+        }
+        
+        .section-title p {
+            font-size: 28px;
+            color: var(--navy);
+            font-weight: 400;
+        }
+        
+        /* Workflow */
+        .workflow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+        
+        .workflow::before {
+            content: '';
+            position: absolute;
+            left: 36px;
+            top: 48px;
+            bottom: 48px;
+            width: 2px;
+            background: linear-gradient(180deg, 
+                var(--gold) 0%, 
+                var(--steel) 50%, 
+                var(--navy) 100%);
+        }
+        
+        .step {
+            display: flex;
+            gap: 28px;
+            padding: 32px 0;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 76px;
+            height: 76px;
+            background: var(--white);
+            border: 2px solid var(--silver-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--slate);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .step:nth-child(1) .step-number {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        
+        .step:nth-child(4) .step-number {
+            border-color: var(--navy);
+            color: var(--navy);
+        }
+        
+        .step-content h3 {
+            font-size: 22px;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .step-content p {
+            color: var(--text-light);
+            font-size: 17px;
+            line-height: 1.6;
+        }
+        
+        .step-detail {
+            margin-top: 16px;
+            padding: 20px;
+            background: var(--fog);
+            border-radius: 6px;
+            border-left: 3px solid var(--silver);
+            font-size: 15px;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .step:nth-child(1) .step-detail {
+            border-left-color: var(--gold);
+            background: var(--gold-light);
+        }
+        
+        .step:nth-child(4) .step-detail {
+            border-left-color: var(--navy);
+            background: var(--steel-light);
+        }
+        
+        /* Delivery options */
+        .delivery {
+            padding: 56px 0;
+            background: var(--fog);
+            margin: 0 -32px;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+        
+        .delivery-title {
+            text-align: center;
+            margin-bottom: 44px;
+        }
+        
+        .delivery-title h2 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--slate);
+            margin-bottom: 16px;
+        }
+        
+        .delivery-title p {
+            font-size: 26px;
+            color: var(--navy);
+        }
+        
+        .delivery-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+        
+        .delivery-card {
+            background: var(--white);
+            border: 1px solid var(--silver-light);
+            border-radius: 8px;
+            padding: 36px 32px;
+            text-align: center;
+        }
+        
+        .delivery-card:first-child {
+            border-top: 4px solid var(--gold);
+        }
+        
+        .delivery-card:last-child {
+            border-top: 4px solid var(--navy);
+        }
+        
+        .delivery-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--fog);
+            border: 2px solid var(--silver-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 20px;
+        }
+        
+        .delivery-card:first-child .delivery-icon {
+            border-color: var(--gold);
+        }
+        
+        .delivery-card:last-child .delivery-icon {
+            border-color: var(--navy);
+        }
+        
+        .delivery-card h3 {
+            font-size: 22px;
+            color: var(--navy);
+            margin-bottom: 14px;
+        }
+        
+        .delivery-card p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .delivery-examples {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text);
+            text-align: left;
+        }
+        
+        .delivery-examples li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            border-bottom: 1px solid var(--silver-light);
+        }
+        
+        .delivery-examples li:last-child {
+            border-bottom: none;
+        }
+        
+        .delivery-examples li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--slate);
+        }
+        
+        /* Trust */
+        .trust {
+            padding: 52px 0;
+            text-align: center;
+        }
+        
+        .trust-stats {
+            display: flex;
+            justify-content: center;
+            gap: 64px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 0 16px;
+        }
+        
+        .stat-number {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 44px;
+            font-weight: 300;
+            color: var(--navy);
+            margin-bottom: 8px;
+            letter-spacing: -2px;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: var(--slate);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 52px 0 64px;
+            background: var(--navy);
+            margin: 0 -32px;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+        
+        .contact h2 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--silver);
+            margin-bottom: 28px;
+            text-align: center;
+        }
+        
+        .contact-box {
+            background: var(--navy-light);
+            border: 1px solid var(--slate);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .contact-box p {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: var(--slate);
+            border: 1px solid var(--slate-light);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+        
+        .contact-method:hover {
+            background: var(--gold);
+            color: var(--navy);
+            border-color: var(--gold);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0 56px;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 14px;
+            color: var(--slate);
+        }
+        
+        .confidential {
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--silver);
+            font-style: italic;
+        }
+        
+        @media (max-width: 680px) {
+            .delivery-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .workflow::before {
+                left: 28px;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .problem-statement {
+                font-size: 20px;
+            }
+            
+            .trust-stats {
+                gap: 40px;
+            }
+        }
+    </style>
+<base target="_blank">
 </head>
-<body style="background:#0a0a0f; color:white; font-family:Arial,sans-serif; margin:0; padding:0;">
-    <div style="text-align:center; padding:80px 20px 40px;">
-        <div style="display:inline-block; background:rgba(0,212,255,0.1); border:1px solid #00d4ff; color:#00d4ff; padding:5px 15px; border-radius:4px; font-size:0.75rem; letter-spacing:2px; margin-bottom:20px;">NAIROBI OPERATIONS CENTER</div>
-        <h1 style="font-size:2.8rem; margin:10px 0; font-weight:700;">Strategic Intelligence Consultancy</h1>
-        <p style="color:#a0a0b0; font-size:1.1rem; max-width:600px; margin:0 auto 50px;">Wyoming-registered. Kenya-based. Serving global clients with geographic market entry and competitive commercial signals.</p>
-        <h2 style="color:#a0a0b0; font-size:1.2rem; margin-bottom:30px; font-weight:400;">Select Your Theater of Operations</h2>
-        <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap; max-width:1000px; margin:0 auto;">
-            <a href="divisions/geographic/" style="text-decoration:none; color:white; background:#1a1a24; padding:40px; border-radius:12px; border:2px solid #ffd700; width:320px; display:block; transition:all 0.3s;">
-                <div style="font-size:3.5rem; margin-bottom:15px;">🌍</div>
-                <h2 style="margin:10px 0; font-size:1.5rem;">Geographic Intelligence</h2>
-                <p style="color:#a0a0b0; margin:10px 0 20px; font-size:0.95rem;">African market entry, regulatory risk, and partnership intelligence.</p>
-                <span style="color:#ffd700; font-size:0.75rem; letter-spacing:1px; background:rgba(255,215,0,0.1); padding:5px 15px; border-radius:20px;">ESTABLISHED PRACTICE</span>
-            </a>
-            <a href="products/shelf-gap-bot/" style="text-decoration:none; color:white; background:#1a1a24; padding:40px; border-radius:12px; border:2px solid #00d4ff; width:320px; display:block; box-shadow:0 0 20px rgba(0,212,255,0.1);">
-                <div style="font-size:3.5rem; margin-bottom:15px;">📡</div>
-                <h2 style="margin:10px 0; font-size:1.5rem;">Commercial Signals</h2>
-                <p style="color:#a0a0b0; margin:10px 0 20px; font-size:0.95rem;">Real-time competitor monitoring and inventory arbitrage detection.</p>
-                <span style="color:#00d4ff; font-size:0.75rem; letter-spacing:1px; background:rgba(0,212,255,0.1); padding:5px 15px; border-radius:20px;">NEW: SHELF GAP BOT™</span>
-            </a>
+<body>
+    <header>
+        <div class="container">
+            <div class="org-name">Strategic Intelligence Consultancy</div>
+            <h1>You need to know what's really happening. We find out for you.</h1>
+            <p class="hero-sub">We verify what matters to you in African markets. Facts you can trust, evidence you can use, delivered when you need it.</p>
         </div>
-        <div style="margin-top:60px; padding:25px; background:rgba(0,212,255,0.05); border:1px solid #2a2a3a; border-radius:8px; max-width:700px; margin-left:auto; margin-right:auto;">
-            <p style="color:#a0a0b0; margin:0; font-size:0.95rem;"><strong style="color:#00d4ff;">Dual-Track Advantage:</strong> Entering African markets? Monitor competitor inventory while you establish local presence. <a href="contact/" style="color:#00d4ff;">Bundle for 20% off →</a></p>
+    </header>
+    
+    <section class="problem">
+        <div class="container">
+            <h2>The Problem</h2>
+            <p class="problem-statement">"I need to verify something in Africa, but I can't be there myself. How do I know what's actually true?"</p>
         </div>
-    </div>
-    <footer style="background:#12121a; border-top:1px solid #2a2a3a; padding:30px; text-align:center; margin-top:50px; color:#606070; font-size:0.85rem;">
-        <p>© 2026 Strategic Intelligence Consultancy | Nairobi Operations Center | Wyoming LLC</p>
-        <p style="margin-top:10px;"><a href="mailto:africa@strategicintelligenceconsultancy.services" style="color:#606070; text-decoration:none; margin:0 10px;">Africa Inquiries</a> | <a href="mailto:signals@strategicintelligenceconsultancy.services" style="color:#606070; text-decoration:none; margin:0 10px;">Signals Division</a></p>
+    </section>
+    
+    <section class="how-we-work">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>Four steps from your question to verified answer</p>
+            </div>
+            
+            <div class="workflow">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>You tell us what needs checking</h3>
+                        <p>Send us a brief: What location, what to verify, your deadline. WhatsApp or email—whatever's easier.</p>
+                        <div class="step-detail">
+                            <strong>Example:</strong> "I need to confirm a factory in Nairobi exists and is operational before I send a $50K deposit."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>We confirm and quote</h3>
+                        <p>Within 2 hours, we confirm feasibility and give you a fixed price. No hidden costs, no surprises.</p>
+                        <div class="step-detail">
+                            Typically $150–500 depending on location complexity and urgency.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>We deploy and investigate</h3>
+                        <p>Our operative visits the site, documents everything with geotagged photos and video, and gathers the intelligence you need.</p>
+                        <div class="step-detail">
+                            Usually completed within 24–48 hours of your approval.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>You receive verified evidence</h3>
+                        <p>Clear report with photo/video proof, written findings, and our assessment. You make your decision with confidence.</p>
+                        <div class="step-detail">
+                            <strong>Example result:</strong> "Factory confirmed operational. 12 workers observed. However, equipment is 30% older than represented. Recommend renegotiation."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="delivery">
+        <div class="container">
+            <div class="delivery-title">
+                <h2>Two ways we deliver</h2>
+                <p>Choose what fits your situation</p>
+            </div>
+            
+            <div class="delivery-options">
+                <div class="delivery-card">
+                    <div class="delivery-icon">🌍</div>
+                    <h3>GroundTruth</h3>
+                    <p>Human operatives on the ground. For when you need eyes and judgment, not just data.</p>
+                    <ul class="delivery-examples">
+                        <li>Physical site verification</li>
+                        <li>Asset and property inspection</li>
+                        <li>Face-to-face interviews</li>
+                        <li>Complex judgment calls</li>
+                    </ul>
+                </div>
+                
+                <div class="delivery-card">
+                    <div class="delivery-icon">⚡</div>
+                    <h3>AfricaShield</h3>
+                    <p>Automated systems monitoring continuously. For ongoing intelligence without the overhead.</p>
+                    <ul class="delivery-examples">
+                        <li>Price tracking across markets</li>
+                        <li>Competitor activity alerts</li>
+                        <li>Inventory monitoring</li>
+                        <li>Background verification systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="trust">
+        <div class="container">
+            <div class="trust-stats">
+                <div class="stat">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Operations</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">48hr</div>
+                    <div class="stat-label">Avg. delivery</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <div class="container">
+            <h2>Start with a conversation</h2>
+            <div class="contact-box">
+                <p>Tell us what you need to verify. We'll be direct about whether we can help, how long it takes, and what it costs.</p>
+                <div class="contact-methods">
+                    <a href="https://wa.me/254792635971" class="contact-method">
+                        <span>📱</span>
+                        <span>WhatsApp: +254 792 635 971</span>
+                    </a>
+                    <a href="mailto:strategicintelconsultancy@gmail.com" class="contact-method">
+                        <span>✉️</span>
+                        <span>strategicintelconsultancy@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>Strategic Intelligence Consultancy. Working across Africa since 2024.</p>
+            <p class="confidential">All inquiries held in strict confidence.</p>
+        </div>
     </footer>
 </body>
 </html>
