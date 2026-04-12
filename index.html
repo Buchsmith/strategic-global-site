@@ -5,6 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GroundTruth | Field Verification Intelligence - Africa</title>
     <meta name="description" content="On-demand field verification across Africa. Verified agents, geotagged evidence, 24-48 hour turnaround.">
+    
+    <!-- Email Campaign Tracking Script -->
+    <script>
+        // Capture URL parameters when someone clicks from your email campaigns
+        const params = new URLSearchParams(window.location.search);
+        const source = params.get('utm_source');
+        const campaign = params.get('utm_campaign');
+        
+        if (source === 'coldoutreach' || campaign === 'afrilabel_pitch') {
+            // Log to browser console for immediate debugging (Press F12 to see)
+            console.log('🔥 HOT LEAD: Email campaign visitor detected!', {
+                timestamp: new Date().toString(),
+                page: window.location.href,
+                referrer: document.referrer,
+                source: source,
+                campaign: campaign
+            });
+            
+            // Send notification via Formspree (replace YOUR_FORM_ID with actual ID from formspree.io)
+            // To set up: Go to formspree.io → Create form → Copy the form endpoint (e.g., https://formspree.io/f/xnqkvpzy)
+            fetch('https://formspree.io/f/xjgjbjgo', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    message: '🔥 Hot lead from email campaign visited website!',
+                    page: window.location.href,
+                    timestamp: new Date().toString(),
+                    source: source || 'email',
+                    campaign: campaign || 'afrilabel',
+                    userAgent: navigator.userAgent,
+                    referrer: document.referrer || 'direct'
+                })
+            }).then(response => {
+                console.log('✅ Notification sent to your email');
+            }).catch(error => {
+                console.log('⚠️ Formspree not configured yet. Visit formspree.io to set up alerts.');
+            });
+            
+            // Optional: Show a subtle "Welcome" for email visitors (remove if not needed)
+            window.addEventListener('load', function() {
+                console.log('Campaign visitor logged. Ready to engage.');
+            });
+        }
+    </script>
+    
     <style>
         /* Psychological Trust Color Palette */
         :root {
