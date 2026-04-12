@@ -3,47 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GroundTruth | Field Verification Intelligence - Africa</title>
-    <meta name="description" content="On-demand field verification across Africa. Verified agents, geotagged evidence, 24-48 hour turnaround.">
-    
+    <title>Strategic Intelligence | Global Operations</title>
+
     <!-- Email Campaign Tracking -->
     <script>
-        // Capture URL parameters when someone clicks from your email campaigns
         const params = new URLSearchParams(window.location.search);
         const source = params.get('utm_source');
-        const campaign = params.get('utm_campaign');
-        
-        if (source === 'coldoutreach' || campaign === 'afrilabel_pitch') {
-            // Log to browser console for immediate debugging (Press F12 to see)
-            console.log('🔥 HOT LEAD: Email campaign visitor detected!', {
-                timestamp: new Date().toString(),
-                page: window.location.href,
-                referrer: document.referrer,
-                source: source,
-                campaign: campaign
-            });
-            
-            // Send notification via Formspree
+        if (source === 'coldoutreach') {
             fetch('https://formspree.io/f/xjgjbjgo', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    message: '🔥 Hot lead from email campaign visited website!',
-                    page: window.location.href,
-                    timestamp: new Date().toString(),
-                    source: source || 'email',
-                    campaign: campaign || 'afrilabel',
-                    userAgent: navigator.userAgent,
-                    referrer: document.referrer || 'direct'
-                })
-            }).then(response => {
-                console.log('✅ Notification sent to your email');
-            }).catch(error => {
-                console.log('⚠️ Tracking active (Formspree error)');
-            });
+                body: JSON.stringify({message: 'Hot lead from email!', page: window.location.href, time: new Date().toString()})
+            }).catch(e => console.log('Tracking active'));
         }
     </script>
-    
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body style="background:#0a0a0f; color:white; font-family:Arial,sans-serif; margin:0; padding:0;">
